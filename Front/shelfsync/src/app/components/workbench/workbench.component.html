@@ -1,0 +1,33 @@
+<div class="header">
+  <div>
+    <app-search-component></app-search-component>
+  </div>
+</div>
+<div class="left-panel">
+  <ul>
+      <li>
+        <p-button (onClick)="customHandleClick('books')">
+         <img src="assets/svg/books.svg" alt="Books" class="svg-icon" >
+          Books
+        </p-button>
+      </li>
+      <li>
+        <p-button (onClick)="customHandleClick('reservations')">
+          <img src="assets/svg/reserve.svg" alt="Reservations" class="svg-icon">
+          Reservations
+        </p-button>
+      </li>
+      <li>
+        <p-button (onClick)="customHandleClick('users')">
+          <img src="assets/svg/users.svg" alt="Users" class="svg-icon">
+         Users
+        </p-button>
+      </li>
+  </ul>
+  <!-- Left panel content -->
+</div>
+<div class="content">
+  <ng-container>
+    <router-outlet></router-outlet>
+  </ng-container>
+</div>
