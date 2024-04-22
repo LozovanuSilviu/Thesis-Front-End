@@ -4,6 +4,7 @@ import { SignUpComponent } from './pages/signup/signup.component';
 import { WorkbenchComponent } from './components/workbench/workbench.component';
 import {BooksComponent} from "./pages/books/books.component";
 import {ReservationsComponent} from "./pages/reservations/reservations.component";
+import {UsersComponent} from "./pages/users/users.component";
 
 export const routes: Routes = [
     {
@@ -27,8 +28,8 @@ export const routes: Routes = [
           component: ReservationsComponent,
         },
         {
-          path: "Users",
-          component: ReservationsComponent,
+          path: "users",
+          component: UsersComponent,
         },
         {
           path: "",
