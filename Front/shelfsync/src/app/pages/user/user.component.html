@@ -1,0 +1,47 @@
+<div class="user-info">
+  <h2>User Information</h2>
+  <p>Email: {{ user.email }}</p>
+  <p>Full Name: {{ user.fullName }}</p>
+  <p>Number of Reservations: {{ user.numberOfReservations }}</p>
+  <p>Number of Rentings: {{ user.numberOfRentings }}</p>
+  <p>Active: {{ user.active ? 'Yes' : 'No' }}</p>
+
+  <div *ngIf="userType == 'librarian'">
+    <h3>Rentings</h3>
+    <p-table [value]="user.rentings" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Start Date</th>
+          <th>Return Date</th>
+          <th>Status</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-renting>
+        <tr>
+          <td>{{ renting.startDate }}</td>
+          <td>{{ renting.returnDate }}</td>
+          <td>{{ renting.status }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <h3>Reservations</h3>
+    <p-table [value]="user.reservations" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Start Date</th>
+          <th>Return Date</th>
+          <th>Status</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-reservation>
+        <tr>
+          <td>{{ reservation.startDate }}</td>
+          <td>{{ reservation.endDate }}</td>
+          <td>{{ reservation.bookName }}</td>
+          <td>{{ reservation.Library }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+</div>

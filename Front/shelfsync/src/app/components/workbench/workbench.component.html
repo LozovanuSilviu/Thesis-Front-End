@@ -4,7 +4,7 @@
   </div>
 </div>
 <div class="left-panel">
-  <ul>
+  <ul *ngIf="userType == 'librarian'">
       <li>
         <p-button (onClick)="customHandleClick('books')">
          <img src="assets/svg/books.svg" alt="Books" class="svg-icon" >
@@ -12,9 +12,15 @@
         </p-button>
       </li>
       <li>
-        <p-button (onClick)="customHandleClick('reservations')">
-          <img src="assets/svg/reserve.svg" alt="Reservations" class="svg-icon">
+        <p-button (onClick)="customHandleClick('all-reservations')">
+          <img src="assets/svg/reserve.svg" alt="All-Reservations" class="svg-icon">
           Reservations
+        </p-button>
+      </li>
+      <li>
+        <p-button (onClick)="customHandleClick('all-rentings')">
+          <img src="assets/svg/reserve.svg" alt="All-Rentings" class="svg-icon">
+          Rentings
         </p-button>
       </li>
       <li>
@@ -23,6 +29,33 @@
          Users
         </p-button>
       </li>
+  </ul>
+
+  <ul *ngIf="userType == 'user'">
+    <li>
+      <p-button (onClick)="customHandleClick('books')">
+        <img src="assets/svg/books.svg" alt="Books" class="svg-icon" >
+        Books
+      </p-button>
+    </li>
+    <li>
+      <p-button (onClick)="customHandleClick('user-reservations')">
+        <img src="assets/svg/reserve.svg" alt="Reservations" class="svg-icon">
+        My Reservations
+      </p-button>
+    </li>
+    <li>
+      <p-button (onClick)="customHandleClick('user-rentings')">
+        <img src="assets/svg/reserve.svg" alt="Rentings" class="svg-icon">
+        My Rentigns
+      </p-button>
+    </li>
+    <li>
+      <p-button (onClick)="customHandleClick('user')">
+        <img src="assets/svg/users.svg" alt="" class="svg-icon">
+        My Profile
+      </p-button>
+    </li>
   </ul>
   <!-- Left panel content -->
 </div>

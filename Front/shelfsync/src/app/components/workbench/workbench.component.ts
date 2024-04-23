@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SearchComponentComponent} from "../../pages/search-component/search-component.component";
 import {Router, RouterOutlet} from "@angular/router";
 import {ButtonModule} from "primeng/button";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'workbench',
@@ -9,12 +10,14 @@ import {ButtonModule} from "primeng/button";
   imports: [
     SearchComponentComponent,
     RouterOutlet,
-    ButtonModule
+    ButtonModule,
+    NgIf
   ],
   templateUrl: './workbench.component.html',
   styleUrl: './workbench.component.scss'
 })
-export class WorkbenchComponent {
+export class WorkbenchComponent implements OnInit{
+  userType: string|null = null;
   constructor( private router: Router ) {
   }
   customHandleClick(page : string){
@@ -24,14 +27,34 @@ export class WorkbenchComponent {
         this.router.navigate(["workbench/books"]);
         break;
       }
-      case 'reservations' : {
-        this.router.navigate(["workbench/reservations"]);
+      case 'all-reservations' : {
+        this.router.navigate(["workbench/all-reservations"]);
+        break;
+      }
+      case 'all-rentings' : {
+        this.router.navigate(["workbench/all-rentings"]);
+        break;
+      }
+      case 'user-reservations' : {
+        this.router.navigate(["workbench/user-reservations"]);
+        break;
+      }
+      case 'user-rentings' : {
+        this.router.navigate(["workbench/user-rentings"]);
         break;
       }
       case 'users' : {
         this.router.navigate(["workbench/users"]);
         break;
       }
+      case 'user' : {
+        this.router.navigate(["workbench/user"]);
+        break;
+      }
     }
+  }
+
+  ngOnInit(): void {
+    this.userType = sessionStorage.getItem("userType")
   }
 }

@@ -9,16 +9,16 @@ interface Car {
   color: string;
 }
 @Component({
-  selector: 'app-reservations',
+  selector: 'app-user-rentings',
   standalone: true,
     imports: [
         SharedModule,
         TableModule
     ],
-  templateUrl: './reservations.component.html',
-  styleUrl: './reservations.component.scss'
+  templateUrl: './user-rentings.component.html',
+  styleUrl: './user-rentings.component.scss'
 })
-export class ReservationsComponent {
+export class UserRentingsComponent {
   cars: Car[] = [
     { vin: 'ABC1', year: 2020, brand: 'Toyota', color: 'Blue' },
     { vin: 'DEF456', year: 2019, brand: 'Honda', color: 'Red' },

@@ -1,0 +1,25 @@
+/* user.component.css */
+.user-info {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.user-info h2 {
+  margin-top: 0;
+}
+
+.rentings-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rentings-table th,
+.rentings-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.rentings-table th {
+  background-color: #f2f2f2;
+}
