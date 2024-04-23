@@ -48,6 +48,7 @@ export class WorkbenchComponent implements OnInit{
         break;
       }
       case 'user' : {
+        console.log("user")
         this.router.navigate(["workbench/user"]);
         break;
       }

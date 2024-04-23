@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {SharedModule} from "primeng/api";
 import {TableModule} from "primeng/table";
+import {ButtonModule} from "primeng/button";
 
 interface Car {
   vin: string;
@@ -11,10 +12,11 @@ interface Car {
 @Component({
   selector: 'all-reservations',
   standalone: true,
-    imports: [
-        SharedModule,
-        TableModule
-    ],
+  imports: [
+    SharedModule,
+    TableModule,
+    ButtonModule
+  ],
   templateUrl: './all-reservations.component.html',
   styleUrl: './all-reservations.component.scss'
 })

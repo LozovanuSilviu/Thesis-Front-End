@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TableModule} from "primeng/table";
 import {NgIf} from "@angular/common";
+import {ActivatedRoute} from "@angular/router";
 
 
 export interface User {
@@ -35,6 +36,10 @@ export interface Reservation {
   styleUrl: './user.component.scss'
 })
 export class UserComponent implements OnInit{
+  userId: string | null = null
+  constructor(private route: ActivatedRoute) {
+  }
+
   userType : string| null = null;
   user: User = {
     email: 'example@example.com',
@@ -63,6 +68,9 @@ export class UserComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.userType = sessionStorage.getItem("userType")
+    this.userType = sessionStorage.getItem("userType");
+    this.route.params.subscribe(params => {
+      this.userId = params['userId'];
+    });
   }
 }

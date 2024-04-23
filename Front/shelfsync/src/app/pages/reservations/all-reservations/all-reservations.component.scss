@@ -2,16 +2,17 @@
   th {
     background-color: #f2f2f2;
     cursor: pointer;
-    border-right: 1px solid #ccc; /* Add vertical border to the right */
+    border-right: 1px solid #ccc;
+    text-align: left;
+    padding: 0px 7px;
   }
 
-  /* Style the table cells */
   td {
     padding: 8px;
-    border-right: 1px solid #ccc; /* Add vertical border to the right */
+    border-right: 1px solid #ccc;
   }
 
-  /* Style the last column to remove the vertical border */
+
   th:last-child, td:last-child {
     border-right: none;
   }
@@ -25,18 +26,19 @@
     cursor: pointer;
   }
 
-  /* Style the pagination buttons on hover */
   .ui-paginator .ui-paginator-page:hover {
     background-color: #ddd;
   }
 
-  /* Style the pagination input field */
+  .cancel {
+    width : fit-content;
+  }
+
   .ui-paginator .ui-paginator-page.ui-state-active,
   .ui-paginator .ui-paginator-page.ui-state-hover {
     background-color: #ddd;
   }
 
-  /* Style the pagination dropdown */
   .ui-paginator .ui-paginator-rpp-options {
     border: 1px solid #ccc;
     background-color: #f2f2f2;
@@ -45,14 +47,12 @@
     cursor: pointer;
   }
 
-  /* Style the pagination dropdown arrow */
   .ui-paginator .ui-paginator-rpp-options .ui-dropdown-trigger {
     background-color: transparent;
     border-color: transparent;
     color: #333;
   }
 
-  /* Style the pagination dropdown options */
   .ui-paginator .ui-paginator-rpp-options .ui-dropdown-items-wrapper {
     background-color: #f2f2f2;
     border: 1px solid #ccc;

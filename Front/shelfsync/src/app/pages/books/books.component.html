@@ -1,4 +1,8 @@
-<!-- table.component.html -->
+<div class="top-right">
+  <p-button (onClick)="addBook()">
+    Add Book
+  </p-button>
+</div>
 <div class="table">
   <p-table [value]="cars" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
     <ng-template pTemplate="header">
@@ -15,6 +19,12 @@
         <td>{{car.year}}</td>
         <td>{{car.brand}}</td>
         <td>{{car.color}}</td>
+        <td>
+          <p-button class="edit-button">
+            <i class="fa fa-pencil"></i>
+            Edit
+          </p-button>
+        </td>
       </tr>
     </ng-template>
   </p-table>

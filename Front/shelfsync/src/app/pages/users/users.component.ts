@@ -54,8 +54,8 @@ export class UsersComponent {
   public onMouseLeave(headerCell: HTMLTableHeaderCellElement){
     this.renderer.setStyle(headerCell, 'color', 'black');
   }
-  public onClick(){
-    this.router.navigate(["workbench/user"])
+  public onClick(id: string){
+    this.router.navigate([`workbench/user/${id}`])
   }
 
 }

@@ -62,3 +62,31 @@
 .table{
   padding: 5%;
 }
+
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-50%, 50%);
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green background color */
+  color: white; /* White text color */
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.top-right:hover {
+  background-color: #45a049; /* Darker green background color on hover */
+}
+
+.edit-button {
+  display: flex; /* Make the button a flex container */
+  align-items: center; /* Align items vertically in the center */
+  gap: 5px; /* Add some space between icon and text */
+}
+
+.edit-button i {
+  font-size: 16px; /* Adjust the icon size */
+}

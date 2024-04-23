@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
 import { FormControl, FormGroup, FormRecord, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
 
@@ -25,8 +25,9 @@ interface LoginForm {
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   loginForm!: FormGroup<LoginForm>;
+  userId : string|null = null;
 
   constructor(
     private router: Router,
@@ -51,5 +52,9 @@ export class LoginComponent {
 
   navigate(){
     this.router.navigate(["signup"])
+  }
+
+  ngOnInit(): void {
+
   }
 }

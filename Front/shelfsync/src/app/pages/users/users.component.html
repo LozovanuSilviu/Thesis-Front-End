@@ -11,7 +11,7 @@
   </ng-template>
   <ng-template pTemplate="body" let-car>
     <tr>
-      <td class="link" #headerCell (mouseenter)="onMouseEnter(headerCell)" (mouseleave)="onMouseLeave(headerCell)" (click)="onClick()">{{car.vin}}</td>
+      <td class="link" #headerCell (mouseenter)="onMouseEnter(headerCell)" (mouseleave)="onMouseLeave(headerCell)" (click)="onClick(car.vin)">{{car.vin}}</td>
       <td>{{car.year}}</td>
       <td>{{car.brand}}</td>
       <td>{{car.color}}</td>
