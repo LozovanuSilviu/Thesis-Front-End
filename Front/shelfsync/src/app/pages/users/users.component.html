@@ -1,6 +1,7 @@
 <!-- table.component.html -->
-
-<p-table [value]="cars" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
+<h3>Users</h3>
+<div class="table">
+  <p-table [value]="cars" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
   <ng-template pTemplate="header">
     <tr>
       <th [pSortableColumn]="'vin'">VIN <p-sortIcon field="vin"></p-sortIcon></th>
@@ -17,4 +18,5 @@
       <td>{{car.color}}</td>
     </tr>
   </ng-template>
-</p-table>
+ </p-table>
+</div>

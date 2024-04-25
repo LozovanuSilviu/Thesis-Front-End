@@ -51,7 +51,15 @@
     border-color: transparent;
     color: #333;
   }
-
+  h3{
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -10%;
+  }
+  .table{
+    padding:5%;
+    margin-top: -5%;
+  }
   /* Style the pagination dropdown options */
   .ui-paginator .ui-paginator-rpp-options .ui-dropdown-items-wrapper {
     background-color: #f2f2f2;

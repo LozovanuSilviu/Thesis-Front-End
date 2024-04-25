@@ -1,12 +1,23 @@
-/* user.component.css */
-.user-info {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin-bottom: 20px;
-}
 
-.user-info h2 {
-  margin-top: 0;
+ h2 {
+  margin-top: -10%;
+}
+ h3{
+  text-align: center;
+   margin-bottom: 30px;
+ }
+ p{
+   margin-bottom: 10px;
+ }
+.table-spacing{
+  margin-bottom: 100px;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+ .table{
+  padding-right: 5%;
+  padding-left: 5%;
+   padding-bottom: 5%;
 }
 
 .rentings-table {

@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {TableModule} from "primeng/table";
-import {NgIf} from "@angular/common";
+import {NgClass, NgIf} from "@angular/common";
 import {ActivatedRoute} from "@angular/router";
+import {ButtonModule} from "primeng/button";
 
 
 export interface User {
@@ -20,17 +21,19 @@ export interface Renting {
   status: number;
 }
 export interface Reservation {
-  bookName: string;
-  Library: string;
-  startDate : string;
-  endDate: string;
+  reservationId: string;
+  library: string;
+  reservedUntil : string;
+  bookId: string;
 }
 @Component({
   selector: 'app-user',
   standalone: true,
   imports: [
     TableModule,
-    NgIf
+    NgIf,
+    ButtonModule,
+    NgClass
   ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
@@ -56,14 +59,33 @@ export class UserComponent implements OnInit{
       {startDate: "ieri", returnDate: "azi", status: 2},
       {startDate: "ieri", returnDate: "azi", status: 1},
       {startDate: "ieri", returnDate: "azi", status: 4},
+      {startDate: "ieri", returnDate: "azi", status: 4},
+      {startDate: "ieri", returnDate: "azi", status: 4},
+      {startDate: "ieri", returnDate: "azi", status: 4},
+      {startDate: "ieri", returnDate: "azi", status: 4},
+      {startDate: "ieri", returnDate: "azi", status: 4},
+      {startDate: "ieri", returnDate: "azi", status: 4},
+      {startDate: "ieri", returnDate: "azi", status: 4},
+      {startDate: "ieri", returnDate: "azi", status: 4},
+      {startDate: "ieri", returnDate: "azi", status: 4},
+      {startDate: "ieri", returnDate: "azi", status: 4},
+      {startDate: "ieri", returnDate: "azi", status: 4},
+      {startDate: "ieri", returnDate: "azi", status: 4},
+      {startDate: "ieri", returnDate: "azi", status: 4},
     ],
     reservations: [
-      {startDate: "ieri", bookName: "ion creanga" , Library: "Stefan cel mare" , endDate: "azi"},
-      {startDate: "ieri", bookName: "ion creanga" , Library: "Stefan cel mare" , endDate: "azi"},
-      {startDate: "ieri", bookName: "ion creanga" , Library: "Stefan cel mare" , endDate: "azi"},
-      {startDate: "ieri", bookName: "ion creanga" , Library: "Stefan cel mare" , endDate: "azi"},
-      {startDate: "ieri", bookName: "ion creanga" , Library: "Stefan cel mare" , endDate: "azi"},
-      {startDate: "ieri", bookName: "ion creanga" , Library: "Stefan cel mare" , endDate: "azi"},
+      {reservationId: "ieri", bookId: "ion creanga" , library: "Stefan cel mare" , reservedUntil: "azi"},
+      {reservationId: "ieri", bookId: "ion creanga" , library: "Stefan cel mare" , reservedUntil: "azi"},
+      {reservationId: "ieri", bookId: "ion creanga" , library: "Stefan cel mare" , reservedUntil: "azi"},
+      {reservationId: "ieri", bookId: "ion creanga" , library: "Stefan cel mare" , reservedUntil: "azi"},
+      {reservationId: "ieri", bookId: "ion creanga" , library: "Stefan cel mare" , reservedUntil: "azi"},
+      {reservationId: "ieri", bookId: "ion creanga" , library: "Stefan cel mare" , reservedUntil: "azi"},
+      {reservationId: "ieri", bookId: "ion creanga" , library: "Stefan cel mare" , reservedUntil: "azi"},
+      {reservationId: "ieri", bookId: "ion creanga" , library: "Stefan cel mare" , reservedUntil: "azi"},
+      {reservationId: "ieri", bookId: "ion creanga" , library: "Stefan cel mare" , reservedUntil: "azi"},
+      {reservationId: "ieri", bookId: "ion creanga" , library: "Stefan cel mare" , reservedUntil: "azi"},
+      {reservationId: "ieri", bookId: "ion creanga" , library: "Stefan cel mare" , reservedUntil: "azi"},
+      {reservationId: "ieri", bookId: "ion creanga" , library: "Stefan cel mare" , reservedUntil: "azi"},
     ]
   }
 
@@ -72,5 +94,9 @@ export class UserComponent implements OnInit{
     this.route.params.subscribe(params => {
       this.userId = params['userId'];
     });
+    // call to get reservations
+    //call to get rentings
+
+
   }
 }

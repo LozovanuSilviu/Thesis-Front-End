@@ -2,13 +2,14 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/signup/signup.component';
 import { WorkbenchComponent } from './components/workbench/workbench.component';
-import {BooksComponent} from "./pages/books/books.component";
+import {BooksComponent} from "./pages/books/book/books.component";
 import {AllReservationsComponent} from "./pages/reservations/all-reservations/all-reservations.component";
 import {UsersComponent} from "./pages/users/users.component";
 import {UserReservationsComponent} from "./pages/reservations/user-reservations/user-reservations.component";
 import {UserRentingsComponent} from "./pages/rentings/user-rentings/user-rentings.component";
 import {AllRentingsComponent} from "./pages/rentings/all-rentings/all-rentings.component";
 import {UserComponent} from "./pages/user/user.component";
+import {EditBookComponent} from "./pages/books/edit-book-component/edit-book.component";
 
 export const routes: Routes = [
     {
@@ -26,6 +27,10 @@ export const routes: Routes = [
         {
           path: "books",
           component: BooksComponent,
+        },
+        {
+          path: "books/edit/:bookId",
+          component: EditBookComponent
         },
         {
           path: "all-reservations",

@@ -1,0 +1,43 @@
+
+<div>
+  <h3>Books</h3>
+  <p-button class="top-right" (onClick)="addBook()">
+    Add Book
+  </p-button>
+</div>
+<div class="table">
+  <p-table [value]="books" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
+    <ng-template pTemplate="header">
+      <tr>
+        <th width="50px"></th>
+        <th [pSortableColumn]="'bookName'">Book Name <p-sortIcon field="year"></p-sortIcon></th>
+        <th [pSortableColumn]="'bookAuthor'">Book Author <p-sortIcon field="brand"></p-sortIcon></th>
+        <th [pSortableColumn]="'library'">Library <p-sortIcon field="color"></p-sortIcon></th>
+        <th [pSortableColumn]="'availableCount'">Available Count <p-sortIcon field="color"></p-sortIcon></th>
+        <th [pSortableColumn]="'reservedCount'">Reserved Count <p-sortIcon field="color"></p-sortIcon></th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-book>
+      <tr>
+        <td>
+          <p-button class="edit-button" (click)="onClick(book.bookId)">
+            <i class="fa fa-pencil"></i>
+            Edit
+          </p-button>
+        </td>
+        <td>{{book.bookName}}</td>
+        <td>{{book.bookAuthor}}</td>
+        <td>{{book.library}}</td>
+        <td>{{book.availableCount}}</td>
+        <td>{{book.reservedCount}}</td>
+        <td>
+          <p-button  (onClick)="deleteBook(book.bookId)">
+            <i class="fa fa-trash"></i>
+          </p-button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+

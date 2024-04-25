@@ -48,8 +48,9 @@ export class WorkbenchComponent implements OnInit{
         break;
       }
       case 'user' : {
+        var userId = sessionStorage.getItem("userId")
         console.log("user")
-        this.router.navigate(["workbench/user"]);
+        this.router.navigate([`workbench/user/${userId}`]);
         break;
       }
     }

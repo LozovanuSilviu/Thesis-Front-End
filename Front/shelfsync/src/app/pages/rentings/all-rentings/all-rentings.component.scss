@@ -5,10 +5,20 @@
     border-right: 1px solid #ccc; /* Add vertical border to the right */
   }
 
+  h3{
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -10%;
+  }
+
   /* Style the table cells */
   td {
     padding: 8px;
     border-right: 1px solid #ccc; /* Add vertical border to the right */
+  }
+  .table{
+    padding:5%;
+    margin-top: -5%;
   }
 
   /* Style the last column to remove the vertical border */

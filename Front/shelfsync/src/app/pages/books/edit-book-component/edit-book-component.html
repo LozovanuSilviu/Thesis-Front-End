@@ -1,0 +1,25 @@
+<div class="modal-overlay" (click)="closeEdit()">
+  <div class="edit-book-modal" (click)="$event.stopPropagation()">
+    <h2>Edit Book Details</h2>
+    <form (ngSubmit)="onSubmit()">
+      <label>Book Name:</label>
+      <input type="text" [(ngModel)]="editBook!.bookName" name="bookName">
+
+      <label>Author:</label>
+      <input type="text" [(ngModel)]="editBook!.bookAuthor" name="bookAuthor">
+
+      <label>Available Copies:</label>
+      <input type="number" [(ngModel)]="editBook!.availableCount" name="availableCount">
+
+      <label>Reserved Copies:</label>
+      <input type="number" [(ngModel)]="editBook!.reservedCount" name="reservedCount">
+
+      <!-- Add more fields as needed -->
+
+      <div class="button-container">
+        <button type="submit">Save</button>
+        <button type="button" (click)="closeEdit()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

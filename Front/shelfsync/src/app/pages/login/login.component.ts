@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit{
     console.log("here")
     this.router.navigate(["workbench"])
       sessionStorage.setItem("userType", "librarian")
+      sessionStorage.setItem("userId", "1")
   }
 
   navigate(){

@@ -9,7 +9,7 @@
 }
 .header > div {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -58,8 +58,18 @@
   width: calc(100% - 15%);
   height: 90%;
   padding-top: 10%;
-  overflow: auto;
+  overflow-y: scroll;
+  overflow-x: scroll;
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 5%;
 }
-
+.Logo{
+  position: absolute;
+  left: 5%;
+}
+.Logo img {
+  height: 10vh; /* 10% of the viewport height */
+  width: auto;
+  margin-right: 10px; /* Add some space between the logo and other content */
+}
