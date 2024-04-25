@@ -1,21 +1,21 @@
 <h3>Reservations</h3>
 <div class="table">
-  <p-table [value]="cars" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
+  <p-table [value]="reservations" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
     <ng-template pTemplate="header">
       <tr>
-        <th [pSortableColumn]="'vin'">VIN <p-sortIcon field="vin"></p-sortIcon></th>
-        <th [pSortableColumn]="'year'">Year <p-sortIcon field="year"></p-sortIcon></th>
-        <th [pSortableColumn]="'brand'">Brand <p-sortIcon field="brand"></p-sortIcon></th>
-        <th [pSortableColumn]="'color'">Color <p-sortIcon field="color"></p-sortIcon></th>
+        <th [pSortableColumn]="'reservationId'">Reservation Id <p-sortIcon field="vin"></p-sortIcon></th>
+        <th [pSortableColumn]="'bookName'">Book Name <p-sortIcon field="year"></p-sortIcon></th>
+        <th [pSortableColumn]="'reservedUntil'">Reserved Until <p-sortIcon field="brand"></p-sortIcon></th>
+        <th [pSortableColumn]="'customerName'">Customer Name <p-sortIcon field="color"></p-sortIcon></th>
         <th style="width: 15px;"></th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-car>
+    <ng-template pTemplate="body" let-reservation>
       <tr>
-        <td>{{car.vin}}</td>
-        <td>{{car.year}}</td>
-        <td>{{car.brand}}</td>
-        <td>{{car.color}}</td>
+        <td>{{reservation.reservationId}}</td>
+        <td>{{reservation.bookName}}</td>
+        <td>{{reservation.reservedUntil}}</td>
+        <td>{{reservation.customerName}}</td>
         <td class="cancel">
           <p-button class="edit-button">
             <i class="fa fa-cancel"></i>

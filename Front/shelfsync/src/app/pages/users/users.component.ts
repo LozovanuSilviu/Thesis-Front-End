@@ -2,6 +2,7 @@ import {Component, OnInit, Renderer2} from '@angular/core';
 import {SharedModule} from "primeng/api";
 import {TableModule} from "primeng/table";
 import {Router} from "@angular/router";
+import {User} from "../../models/User";
 interface Car {
   vin: string;
   year: number;
@@ -24,28 +25,15 @@ export class UsersComponent {
     private router: Router,
   )
   {}
-  cars: Car[] = [
-    { vin: 'ABC12222', year: 2020, brand: 'Toyota', color: 'Blue' },
-    { vin: 'DEF456', year: 2019, brand: 'Honda', color: 'Red' },
-    { vin: 'GHI789', year: 2018, brand: 'Ford', color: 'Green' },
-    { vin: 'ABC123', year: 2020, brand: 'Toyota', color: 'Blue' },
-    { vin: 'DEF456', year: 2019, brand: 'Honda', color: 'Red' },
-    { vin: 'GHI789', year: 2018, brand: 'Ford', color: 'Green' },
-    { vin: 'ABC123', year: 2020, brand: 'Toyota', color: 'Blue' },
-    { vin: 'DEF456', year: 2019, brand: 'Honda', color: 'Red' },
-    { vin: 'GHI789', year: 2018, brand: 'Ford', color: 'Green' },
-    { vin: 'ABC123', year: 2020, brand: 'Toyota', color: 'Blue' },
-    { vin: 'DEF456', year: 2019, brand: 'Honda', color: 'Red' },
-    { vin: 'GHI789', year: 2018, brand: 'Ford', color: 'Green' },
-    { vin: 'ABC123', year: 2020, brand: 'Toyota', color: 'Blue' },
-    { vin: 'DEF456', year: 2019, brand: 'Honda', color: 'Red' },
-    { vin: 'GHI789', year: 2018, brand: 'Ford', color: 'Green' },
-    { vin: 'ABC123', year: 2020, brand: 'Toyota', color: 'Blue' },
-    { vin: 'DEF456', year: 2019, brand: 'Honda', color: 'Red' },
-    { vin: 'GHI789', year: 2018, brand: 'Ford', color: 'Green' },
-    { vin: 'ABC123', year: 2020, brand: 'Toyota', color: 'Blue' },
-    { vin: 'DEF456', year: 2019, brand: 'Honda', color: 'Red' },
-    { vin: 'GHI789', year: 2018, brand: 'Ford', color: 'Green' },
+  users: User[] = [
+    {userId:'4', email: 'example@example.com', customerName: 'John Doe', numberOfReservations: 3, numberOfRentings: 2},
+    {userId:'4', email: 'example@example.com', customerName: 'John Doe', numberOfReservations: 3, numberOfRentings: 2},
+    {userId:'4', email: 'example@example.com', customerName: 'John Doe', numberOfReservations: 3, numberOfRentings: 2},
+    {userId:'4', email: 'example@example.com', customerName: 'John Doe', numberOfReservations: 3, numberOfRentings: 2},
+    {userId:'4', email: 'example@example.com', customerName: 'John Doe', numberOfReservations: 3, numberOfRentings: 2},
+    {userId:'4', email: 'example@example.com', customerName: 'John Doe', numberOfReservations: 3, numberOfRentings: 2},
+    {userId:'4', email: 'example@example.com', customerName: 'John Doe', numberOfReservations: 3, numberOfRentings: 2},
+    {userId:'4', email: 'example@example.com', customerName: 'John Doe', numberOfReservations: 3, numberOfRentings: 2},
   ];
   public onMouseEnter(headerCell: HTMLTableHeaderCellElement){
     this.renderer.setStyle(headerCell, 'color', 'blue');

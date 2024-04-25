@@ -1,27 +1,29 @@
 <h2>User Information</h2>
+<p>Full Name: {{ user.customerName }}</p>
 <p>Email: {{ user.email }}</p>
-<p>Full Name: {{ user.fullName }}</p>
 <p>Number of Reservations: {{ user.numberOfReservations }}</p>
 <p>Number of Rentings: {{ user.numberOfRentings }}</p>
-<p>Active: {{ user.active ? 'Yes' : 'No' }}</p>
 
 <div *ngIf="userType == 'librarian'">
   <h3>Rentings</h3>
   <div class="table-spacing">
-    <p-table [value]="user.rentings" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
+    <p-table [value]="rentings" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
       <ng-template pTemplate="header">
         <tr>
-          <th>Start Date</th>
-          <th>Return Date</th>
-          <th>Status</th>
-          <th style="width: 15px;"></th>
+          <th [pSortableColumn]="'leaseId'">Renting Id <p-sortIcon field="vin"></p-sortIcon></th>
+          <th [pSortableColumn]="'bookName'">Book <p-sortIcon field="year"></p-sortIcon></th>
+          <th [pSortableColumn]="'leaseStartDate'">Start Date <p-sortIcon field="brand"></p-sortIcon></th>
+          <th [pSortableColumn]="'returnDate'">Return Date <p-sortIcon field="color"></p-sortIcon></th>
+          <th [pSortableColumn]="'customerName'">Customer Name <p-sortIcon field="color"></p-sortIcon></th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-renting>
         <tr>
-          <td>{{ renting.startDate }}</td>
-          <td>{{ renting.returnDate }}</td>
-          <td>{{ renting.status }}</td>
+          <td>{{renting.leaseId}}</td>
+          <td>{{renting.bookName}}</td>
+          <td>{{renting.leaseStartDate}}</td>
+          <td>{{renting.returnDate}}</td>
+          <td>{{renting.customerName}}</td>
           <td>
             <p-button class="edit-button">
               <i class="fa fa-times"></i>
@@ -33,22 +35,21 @@
   </div>
   <h3>Reservations</h3>
   <div class="table">
-    <p-table [value]="user.reservations" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
+    <p-table [value]="reservations" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
       <ng-template pTemplate="header">
         <tr>
-          <th>Reservation Id</th>
-          <th>Book Id</th>
-          <th>Reserved Until</th>
-          <th>Library</th>
-          <th style="width: 15px;"></th>
+          <th [pSortableColumn]="'reservationId'">Reservation Id <p-sortIcon field="vin"></p-sortIcon></th>
+          <th [pSortableColumn]="'bookName'">Book Name <p-sortIcon field="year"></p-sortIcon></th>
+          <th [pSortableColumn]="'reservedUntil'">Reserved Until <p-sortIcon field="brand"></p-sortIcon></th>
+          <th [pSortableColumn]="'customerName'">Customer Name <p-sortIcon field="color"></p-sortIcon></th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-reservation>
         <tr>
-          <td>{{ reservation.reservationId }}</td>
-          <td>{{ reservation.bookId }}</td>
-          <td>{{ reservation.reservedUntil }}</td>
-          <td>{{ reservation.library }}</td>
+          <td>{{reservation.reservationId}}</td>
+          <td>{{reservation.bookName}}</td>
+          <td>{{reservation.reservedUntil}}</td>
+          <td>{{reservation.customerName}}</td>
           <td>
             <p-button class="edit-button">
               <i class="fa fa-cancel"></i>
