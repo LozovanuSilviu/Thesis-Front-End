@@ -1,0 +1,11 @@
+<div class="modal-overlay">
+  <div class="reservation-modal">
+    <h2>Confirm Reservation</h2>
+    <p>Are you sure you want to add a reservation for the following book:</p>
+    <p><strong>{{ book!.bookName }}</strong> written by <strong>{{ book!.bookAuthor }}</strong> from library: <strong>{{ book!.library }}</strong></p>
+    <div class="button-container">
+      <button class="submit-button" (click)="onSubmit()">Submit</button>
+      <button class="cancel-button" (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+</div>

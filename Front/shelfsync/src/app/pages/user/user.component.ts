@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TableModule, TablePageEvent} from "primeng/table";
 import {NgClass, NgIf} from "@angular/common";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ButtonModule} from "primeng/button";
 import {User} from "../../models/User";
 import {Reservation} from "../../models/Reservation";
@@ -21,7 +21,10 @@ import {Rent} from "../../models/Rent";
 })
 export class UserComponent implements OnInit{
   userId: string | null = null
-  constructor(private route: ActivatedRoute) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
   }
 
   userType : string| null = null;
@@ -33,7 +36,7 @@ export class UserComponent implements OnInit{
     numberOfRentings: 2,
   }
 
-  rentings:Rent[] = [
+  rents:Rent[] = [
     { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
     { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
     { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
@@ -68,6 +71,15 @@ export class UserComponent implements OnInit{
     });
     // call to get reservations
     //call to get rentings
+  }
+
+  returnBook(leaseId: string){
+    this.router.navigate([`workbench/all-rentings/return-rent/${leaseId}`])
+  }
+
+  createRentFromReservation(reservationId: string)
+  {
+    this.router.navigate([`workbench/all-reservations/add-rent/${reservationId}`])
   }
 
 }

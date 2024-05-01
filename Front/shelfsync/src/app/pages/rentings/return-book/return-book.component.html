@@ -1,0 +1,21 @@
+<div class="modal-overlay">
+  <div class="return-book-modal">
+    <h2>Confirm Book Return</h2>
+    <p>Are you sure the book: <strong>{{ bookName }}</strong> rented by <strong>{{ customerName }}</strong> is safely returned?</p>
+<!--    <div class="rating-container">-->
+<!--      <div-->
+<!--        class="star"-->
+<!--        *ngFor="let star of stars; let i = index"-->
+<!--        (mouseover)="highlightStars(i)"-->
+<!--        (mouseleave)="resetStars()"-->
+<!--        (click)="setCurrentRating(i + 1)"-->
+<!--        [ngClass]="{ 'highlighted': i < currentRating }">-->
+<!--        &#9733;-->
+<!--      </div>-->
+<!--    </div>-->
+    <div class="button-container">
+      <button class="return-button" (click)="onReturn()">Return</button>
+      <button class="cancel-button" (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+</div>

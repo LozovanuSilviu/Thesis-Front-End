@@ -1,1 +1,15 @@
-<p>delete-reservation works!</p>
+<div class="modal-overlay">
+  <div class="reservation-modal">
+    <h2>Confirm Reservation Cancellation</h2>
+    <p>
+      Are you sure you want to cancel the reservation for the book:
+    </p>
+    <p>
+      <strong>{{ reservation.bookName }}</strong>
+    </p>
+    <div class="button-container">
+      <button class="confirm-cancel-button" (click)="onConfirmCancel()">Confirm</button>
+      <button class="dismiss-button" (click)="onDismiss()">Dismiss</button>
+    </div>
+  </div>
+</div>

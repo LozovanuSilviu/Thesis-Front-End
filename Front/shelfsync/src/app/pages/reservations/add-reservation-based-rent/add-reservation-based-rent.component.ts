@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NgStyle} from "@angular/common";
+import {Location, NgStyle} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -21,7 +21,7 @@ export class AddReservationBasedRentComponent implements OnInit{
 
 constructor(
   private route: ActivatedRoute,
-  private router: Router
+  private location: Location
 ) {
 }
 
@@ -31,14 +31,15 @@ constructor(
   }
 
   closeReturnDate() {
-  this.router.navigate(["workbench/all-reservations"])
+  this.location.back();
   }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.rentId = params['rentId'];
     })
-    this.minDate = new Date(new Date().setDate(new Date().getDate()  +2)).toISOString().substring(0, 10);
-    this.maxDate = new Date(new Date().setDate(new Date().getDate()  +8)).toISOString().substring(0, 10);
+    this.minDate = new Date(new Date().setDate(new Date().getDate()  +1)).toISOString().substring(0, 10);
+    this.maxDate = new Date(new Date().setDate(new Date().getDate()  +7)).toISOString().substring(0, 10);
   }
+
 }

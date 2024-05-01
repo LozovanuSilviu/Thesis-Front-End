@@ -10,15 +10,28 @@
   align-items: center;
 }
 
-.reservation-modal {
+.return-book-modal {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.reservation-modal h2 {
+.return-book-modal h2 {
   margin-top: 0;
+}
+
+.rating-container {
+  margin-bottom: 20px;
+}
+
+.star {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.star.highlighted {
+  color: yellow;
 }
 
 .button-container {
@@ -33,20 +46,20 @@
   cursor: pointer;
 }
 
-.confirm-cancel-button {
+.return-button {
   background-color: #007bff;
   color: white;
 }
 
-.confirm-cancel-button:hover {
+.return-button:hover {
   background-color: #0056b3;
 }
 
-.dismiss-button {
+.cancel-button {
   background-color: #6c757d;
   color: white;
 }
 
-.dismiss-button:hover {
+.cancel-button:hover {
   background-color: #5a6268;
 }

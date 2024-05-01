@@ -14,7 +14,7 @@
     <ng-template pTemplate="body" let-rent>
       <tr>
         <td class="cancel">
-          <p-button class="return-button" >
+          <p-button class="return-button" (onClick)="returnBook(rent.leaseId)">
             <i class="fa fa-arrow-left"></i>
             Return
           </p-button>

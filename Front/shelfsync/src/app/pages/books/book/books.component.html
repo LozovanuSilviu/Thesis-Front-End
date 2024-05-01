@@ -1,6 +1,6 @@
 <div>
   <h3>Books</h3>
-  <p-button class="top-right" (click)="addBook()">
+  <p-button class="top-right" (click)="addBook()" *ngIf="this.userType == 'librarian'">
     Add Book
   </p-button>
 </div>
@@ -8,26 +8,30 @@
   <p-table [value]="books" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
     <ng-template pTemplate="header">
       <tr>
-        <th width="50px"></th>
-        <th [pSortableColumn]="'bookId'">Book Id<p-sortIcon field="year"></p-sortIcon></th>
+        <th style="width:50px;" ></th>
+        <th [pSortableColumn]="'bookId'">Book Id<p-sortIcon field="year" style="width:300px;"></p-sortIcon></th>
         <th [pSortableColumn]="'bookName'">Book Name <p-sortIcon field="year"></p-sortIcon></th>
         <th [pSortableColumn]="'bookAuthor'">Book Author <p-sortIcon field="brand"></p-sortIcon></th>
         <th [pSortableColumn]="'library'">Library <p-sortIcon field="color"></p-sortIcon></th>
         <th [pSortableColumn]="'availableCount'">Available Count <p-sortIcon field="color"></p-sortIcon></th>
         <th [pSortableColumn]="'reservedCount'">Reserved Count <p-sortIcon field="color"></p-sortIcon></th>
-        <th></th>
+        <th *ngIf="this.userType == 'librarian'"></th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-book>
       <tr>
         <td>
-          <p-button class="edit-button" (click)="addRent(book)">
+          <p-button class="edit-button" (click)="addRent(book)" *ngIf="this.userType == 'librarian'">
             <i class="fa fa-plus"></i>
             Rent
           </p-button>
+          <p-button class="edit-button" (click)="addReservation(book.bookId)" *ngIf="this.userType == 'user'">
+            <i class="fa fa-plus"></i>
+            Reserve
+          </p-button>
         </td>
         <td #headerCell (mouseenter)="onMouseEnter(headerCell)" (mouseleave)="onMouseLeave(headerCell)">{{book.bookId}}
-          <button class="edit-book" (click)="onClick(book.bookId)">
+          <button class="edit-book" (click)="onClick(book.bookId)" *ngIf="this.userType == 'librarian'">
             <i class="fa fa-pencil"></i>
             Edit
           </button>
@@ -38,7 +42,7 @@
         <td>{{book.availableCount}}</td>
         <td>{{book.reservedCount}}</td>
         <td>
-          <p-button  (onClick)="deleteBook(book.bookId)">
+          <p-button  (onClick)="deleteBook(book.bookId)" *ngIf="this.userType == 'librarian'">
             <i class="fa fa-trash"></i>
           </p-button>
         </td>
