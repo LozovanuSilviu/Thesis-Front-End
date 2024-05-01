@@ -1,0 +1,13 @@
+<div class="modal-overlay" (click)="closeReturnDate()">
+  <div class="return-date-modal" (click)="$event.stopPropagation()">
+    <h2>Enter Return Date</h2>
+    <form (ngSubmit)="onSubmit()">
+      <label>Return Date:</label>
+      <input type="date" [(ngModel)]="returnDate" name="returnDate" [min]="minDate" [max]="maxDate">
+      <div class="button-container">
+        <button class="submit-rent add-button" type="submit">Submit</button>
+        <button class="close-rent add-button" type="button" (click)="closeReturnDate()">Close</button>
+      </div>
+    </form>
+  </div>
+</div>

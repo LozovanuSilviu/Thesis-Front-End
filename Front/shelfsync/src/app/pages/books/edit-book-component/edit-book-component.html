@@ -11,8 +11,8 @@
       <label>Available Copies:</label>
       <input type="number" [(ngModel)]="editBook!.availableCount" name="availableCount">
       <div class="button-container">
-        <button type="submit">Save</button>
-        <button type="button" (click)="closeEdit()">Cancel</button>
+        <button class="edit-book-save" type="submit">Save</button>
+        <button class="edit-book-cancel" type="button" (click)="closeEdit()">Cancel</button>
       </div>
     </form>
   </div>

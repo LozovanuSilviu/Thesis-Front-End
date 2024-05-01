@@ -1,0 +1,23 @@
+<div class="modal-overlay" (click)="closeAdd()">
+  <div class="add-book-modal" (click)="$event.stopPropagation()">
+    <h2>Add New Book</h2>
+    <form (ngSubmit)="onSubmit()">
+      <label>Book Name:</label>
+      <input type="text" [(ngModel)]="newBook.bookName" name="bookName">
+
+      <label>Author:</label>
+      <input type="text" [(ngModel)]="newBook.bookAuthor" name="bookAuthor">
+
+      <label>Library:</label>
+      <input type="text" [(ngModel)]="newBook.library" name="library">
+
+      <label>Available Copies:</label>
+      <input type="number" [(ngModel)]="newBook.availableCount" name="availableCount">
+
+      <div class="button-container">
+        <button type="submit">Add Book</button>
+        <button type="button" (click)="closeAdd()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

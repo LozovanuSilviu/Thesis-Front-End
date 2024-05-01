@@ -22,32 +22,45 @@
   height: 90%;
   border-right: 1px solid black;
 }
-.left-panel p-button{
-  border: none;
-  background-color: inherit;
+:host::ng-deep{
+  .p-element{
+    border:none;
+    background-color: transparent;
+  }
+}
+
+
+.svg-icon {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.button{
+  color:white;
 }
 
 .left-panel ul {
   list-style-type: none;
-  padding: 10px 5px;
+  padding: 15px;
+  li:hover{
+    background-color: lightgrey;
+    //cursor:pointer;
+    border-radius: 6px
+  }
 }
 
 .left-panel li {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  width: 100%; /* Make list items take up the maximum available width */
 }
-
-.left-panel li:hover {
-  background-color: lightgrey; /* Change background color on hover */
-}
-
 .left-panel img {
   width: 24px;
   height: 24px;
   margin-right: 10px;
 }
 .svg-icon {
+  margin-left: 5px;
   width: 24px; /* Adjust width as needed */
   height: 24px; /* Adjust height as needed */
 }

@@ -10,6 +10,9 @@ import {UserRentingsComponent} from "./pages/rentings/user-rentings/user-renting
 import {AllRentingsComponent} from "./pages/rentings/all-rentings/all-rentings.component";
 import {UserComponent} from "./pages/user/user.component";
 import {EditBookComponent} from "./pages/books/edit-book-component/edit-book.component";
+import {NewBookComponent} from "./pages/books/new-book/new-book.component";
+import {DeleteBookComponent} from "./pages/books/delete-book/delete-book.component";
+import {AddReservationBasedRentComponent} from "./pages/rentings/add-reservation-based-rent/add-reservation-based-rent.component";
 
 export const routes: Routes = [
     {
@@ -29,8 +32,16 @@ export const routes: Routes = [
           component: BooksComponent,
         },
         {
+          path: "books/new-book",
+          component: NewBookComponent,
+        },
+        {
           path: "books/edit/:bookId",
           component: EditBookComponent
+        },
+        {
+          path: "books/delete/:bookId",
+          component: DeleteBookComponent
         },
         {
           path: "all-reservations",
@@ -47,6 +58,10 @@ export const routes: Routes = [
         {
           path: "all-rentings",
           component: AllRentingsComponent,
+        },
+        {
+          path: "all-reservations/add-rent/:rentId",
+          component: AddReservationBasedRentComponent,
         },
         {
           path: "users",

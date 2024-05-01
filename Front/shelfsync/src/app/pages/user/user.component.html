@@ -7,7 +7,11 @@
 <div *ngIf="userType == 'librarian'">
   <h3>Rentings</h3>
   <div class="table-spacing">
-    <p-table [value]="rentings" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
+    <p-table [value]="rentings"
+             [paginator]="true"
+             [rows]="5"
+             [showCurrentPageReport]="true"
+             [rowsPerPageOptions]="[5, 10, 20]">
       <ng-template pTemplate="header">
         <tr>
           <th [pSortableColumn]="'leaseId'">Renting Id <p-sortIcon field="vin"></p-sortIcon></th>
@@ -56,6 +60,12 @@
             </p-button>
           </td>
         </tr>
+      </ng-template>
+      <ng-template pTemplate="paginatorleft">
+        <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+      </ng-template>
+      <ng-template pTemplate="paginatorright">
+        <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
       </ng-template>
     </p-table>
   </div>

@@ -1,7 +1,6 @@
-
 <div>
   <h3>Books</h3>
-  <p-button class="top-right" (onClick)="addBook()">
+  <p-button class="top-right" (click)="addBook()">
     Add Book
   </p-button>
 </div>
@@ -10,20 +9,28 @@
     <ng-template pTemplate="header">
       <tr>
         <th width="50px"></th>
+        <th [pSortableColumn]="'bookId'">Book Id<p-sortIcon field="year"></p-sortIcon></th>
         <th [pSortableColumn]="'bookName'">Book Name <p-sortIcon field="year"></p-sortIcon></th>
         <th [pSortableColumn]="'bookAuthor'">Book Author <p-sortIcon field="brand"></p-sortIcon></th>
         <th [pSortableColumn]="'library'">Library <p-sortIcon field="color"></p-sortIcon></th>
         <th [pSortableColumn]="'availableCount'">Available Count <p-sortIcon field="color"></p-sortIcon></th>
+        <th [pSortableColumn]="'reservedCount'">Reserved Count <p-sortIcon field="color"></p-sortIcon></th>
         <th></th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-book>
       <tr>
         <td>
-          <p-button class="edit-button" (click)="onClick(book.bookId)">
+          <p-button class="edit-button" (click)="addRent(book)">
+            <i class="fa fa-plus"></i>
+            Rent
+          </p-button>
+        </td>
+        <td #headerCell (mouseenter)="onMouseEnter(headerCell)" (mouseleave)="onMouseLeave(headerCell)">{{book.bookId}}
+          <button class="edit-book" (click)="onClick(book.bookId)">
             <i class="fa fa-pencil"></i>
             Edit
-          </p-button>
+          </button>
         </td>
         <td>{{book.bookName}}</td>
         <td>{{book.bookAuthor}}</td>
@@ -39,4 +46,3 @@
     </ng-template>
   </p-table>
 </div>
-

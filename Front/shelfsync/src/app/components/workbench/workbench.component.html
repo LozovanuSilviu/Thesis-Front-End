@@ -8,26 +8,26 @@
 </div>
 <div class="left-panel">
   <ul *ngIf="userType == 'librarian'">
-      <li>
-        <p-button (onClick)="customHandleClick('books')">
+      <li (click)="customHandleClick('books')">
+        <p-button>
          <img src="assets/svg/books.svg" alt="Books" class="svg-icon" >
           Books
         </p-button>
       </li>
-      <li>
-        <p-button (onClick)="customHandleClick('all-reservations')">
+      <li (click)="customHandleClick('all-reservations')">
+        <p-button >
           <img src="assets/svg/reserve.svg" alt="All-Reservations" class="svg-icon">
           Reservations
         </p-button>
       </li>
-      <li>
-        <p-button (onClick)="customHandleClick('all-rentings')">
+      <li (click)="customHandleClick('all-rentings')">
+        <p-button >
           <img src="assets/svg/rentings.svg" alt="All-Rentings" class="svg-icon">
           Rentings
         </p-button>
       </li>
-      <li>
-        <p-button (onClick)="customHandleClick('users')">
+      <li (click)="customHandleClick('users')">
+        <p-button >
           <img src="assets/svg/users.svg" alt="Users" class="svg-icon">
          Users
         </p-button>
@@ -35,26 +35,26 @@
   </ul>
 
   <ul *ngIf="userType == 'user'">
-    <li>
-      <p-button (onClick)="customHandleClick('books')">
+    <li  (click)="customHandleClick('books')">
+      <p-button>
         <img src="assets/svg/books.svg" alt="Books" class="svg-icon" >
         Books
       </p-button>
     </li>
-    <li>
-      <p-button (onClick)="customHandleClick('user-reservations')">
+    <li (click)="customHandleClick('user-reservations')">
+      <p-button>
         <img src="assets/svg/reserve.svg" alt="Reservations" class="svg-icon">
         My Reservations
       </p-button>
     </li>
-    <li>
-      <p-button (onClick)="customHandleClick('user-rentings')">
+    <li (click)="customHandleClick('user-rentings')">
+      <p-button>
         <img src="assets/svg/rentings.svg" alt="Rentings" class="svg-icon">
         My Rentigns
       </p-button>
     </li>
-    <li>
-      <p-button (onClick)="customHandleClick('user')">
+    <li (click)="customHandleClick('user')">
+      <p-button>
         <img src="assets/svg/users.svg" alt="" class="svg-icon">
         My Profile
       </p-button>

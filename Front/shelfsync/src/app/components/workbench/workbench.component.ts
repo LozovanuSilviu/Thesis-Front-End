@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {SearchComponentComponent} from "../../pages/search-component/search-component.component";
 import {Router, RouterOutlet} from "@angular/router";
 import {ButtonModule} from "primeng/button";
-import {NgIf} from "@angular/common";
+import {NgIf, NgStyle} from "@angular/common";
+import {StyleClassModule} from "primeng/styleclass";
 
 @Component({
   selector: 'workbench',
@@ -11,7 +12,9 @@ import {NgIf} from "@angular/common";
     SearchComponentComponent,
     RouterOutlet,
     ButtonModule,
-    NgIf
+    NgIf,
+    NgStyle,
+    StyleClassModule
   ],
   templateUrl: './workbench.component.html',
   styleUrl: './workbench.component.scss'

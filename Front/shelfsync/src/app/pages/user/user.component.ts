@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TableModule} from "primeng/table";
+import {TableModule, TablePageEvent} from "primeng/table";
 import {NgClass, NgIf} from "@angular/common";
 import {ActivatedRoute} from "@angular/router";
 import {ButtonModule} from "primeng/button";
@@ -68,7 +68,6 @@ export class UserComponent implements OnInit{
     });
     // call to get reservations
     //call to get rentings
-
-
   }
+
 }

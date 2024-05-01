@@ -3,6 +3,7 @@
   <p-table  [value]="rents" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
     <ng-template pTemplate="header">
       <tr>
+        <th style="width: 15px;"></th>
         <th [pSortableColumn]="'leaseId'">Renting Id <p-sortIcon field="vin"></p-sortIcon></th>
         <th [pSortableColumn]="'bookName'">Book <p-sortIcon field="year"></p-sortIcon></th>
         <th [pSortableColumn]="'leaseStartDate'">Start Date <p-sortIcon field="brand"></p-sortIcon></th>
@@ -12,6 +13,12 @@
     </ng-template>
     <ng-template pTemplate="body" let-rent>
       <tr>
+        <td class="cancel">
+          <p-button class="return-button" >
+            <i class="fa fa-arrow-left"></i>
+            Return
+          </p-button>
+        </td>
         <td>{{rent.leaseId}}</td>
         <td>{{rent.bookName}}</td>
         <td>{{rent.leaseStartDate}}</td>
