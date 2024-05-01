@@ -86,3 +86,25 @@
   width: auto;
   margin-right: 10px; /* Add some space between the logo and other content */
 }
+
+.logout-container {
+  position: fixed;
+
+  right: 0; /* Add margin between search and logout */
+  top: 17px;
+}
+
+.logout-button {
+  margin-right:20px;
+  padding: 10px 20px; /* Add padding to button */
+  background-color: #007bff; /* Set button background color */
+  color: white; /* Set button text color */
+  border: none; /* Remove button border */
+  border-radius: 5px; /* Add button border radius */
+  cursor: pointer; /* Add cursor pointer on hover */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.logout-button:hover {
+  background-color: #0056b3; /* Darker background color on hover */
+}

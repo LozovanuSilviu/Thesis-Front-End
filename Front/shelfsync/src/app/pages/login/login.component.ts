@@ -46,9 +46,14 @@ export class LoginComponent implements OnInit{
     //   error: () => this.toastService.error("Erro inesperado! Tente novamente mais tarde")
     // })
     console.log("here")
-    this.router.navigate(["workbench"])
-      sessionStorage.setItem("userType", "librarian")
-      sessionStorage.setItem("userId", "1")
+      if (this.loginForm.value.email == "john@gmail.com"){
+        this.router.navigate(["workbench"])
+        sessionStorage.setItem("userType", "user")
+        sessionStorage.setItem("userId", "1aB2cD")
+      }else {
+        this.router.navigate(["workbench"])
+        sessionStorage.setItem("userType", "librarian")
+      }
   }
 
   navigate(){

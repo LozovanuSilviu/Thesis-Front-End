@@ -27,17 +27,14 @@ export class UserReservationsComponent {
   constructor(private router: Router) {
   }
   reservations: Reservation[] = [
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-  ];
+    {
+      "reservationId": "g4SD7f",
+      "reservedUntil": "2024-05-07",
+      "customerName": "John",
+      "bookName": "To Kill a Mockingbird"
+    }
+  ]
+
 
   cancelReservation(reservationId: string)
   {

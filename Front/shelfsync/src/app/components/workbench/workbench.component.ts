@@ -59,6 +59,10 @@ export class WorkbenchComponent implements OnInit{
     }
   }
 
+  logOut(){
+    sessionStorage.clear();
+    this.router.navigate([""])
+  }
   ngOnInit(): void {
     this.userType = sessionStorage.getItem("userType")
   }

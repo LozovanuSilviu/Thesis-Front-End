@@ -29,40 +29,30 @@ export class UserComponent implements OnInit{
 
   userType : string| null = null;
   user: User = {
-    userId: '4',
-    email: 'example@example.com',
-    customerName: 'John Doe',
-    numberOfReservations: 3,
-    numberOfRentings: 2,
+    userId: '1aB2cD',
+    email: 'john@gmail.com',
+    customerName: 'John Snow',
+    numberOfReservations: 1,
+    numberOfRentings: 1,
   }
 
   rents:Rent[] = [
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
+    {
+      "leaseId": "3dH5g9",
+      "bookName": "To Kill a Mockingbird",
+      "leaseStartDate": "2024-04-24",
+      "returnDate": "2024-05-01",
+      "customerName": "John"
+    },
   ];
 
   reservations : Reservation[] = [
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
-    {reservationId: "5", reservedUntil:"miine", customerName: "valera", bookName: "got"},
+    {
+      "reservationId": "g4SD7f",
+      "reservedUntil": "2024-05-07",
+      "customerName": "John",
+      "bookName": "To Kill a Mockingbird"
+    }
   ];
   ngOnInit(): void {
     this.userType = sessionStorage.getItem("userType");

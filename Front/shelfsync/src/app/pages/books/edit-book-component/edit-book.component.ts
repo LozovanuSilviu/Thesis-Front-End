@@ -39,6 +39,6 @@ export class EditBookComponent  implements OnInit{
     });
       //request to get book details
     this.editBook =
-      { bookId: "1", bookName: "amintiri din copchilarie", bookAuthor: "ion Creanga",library: "biblioteca UTM", availableCount: 10, reservedCount: 5 }
+      { bookId: "5d1d846e", bookName: "To Kill a Mockingbird", bookAuthor: "Harper Lee",library: "National Library of Moldova", availableCount: 3, reservedCount: 1 }
   }
 }

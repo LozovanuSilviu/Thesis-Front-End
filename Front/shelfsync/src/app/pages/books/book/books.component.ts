@@ -1,9 +1,9 @@
-import {Component, OnInit, Renderer2} from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy, OnInit, Renderer2} from '@angular/core';
 import {TableModule} from "primeng/table";
 import {ButtonModule} from "primeng/button";
 import { Router} from "@angular/router";
 import {Book} from "../../../models/book";
-import {NgIf} from "@angular/common";
+import { NgIf} from "@angular/common";
 @Component({
   selector: 'app-books',
   standalone: true,
@@ -15,11 +15,12 @@ import {NgIf} from "@angular/common";
   templateUrl: './books.component.html',
   styleUrl: './books.component.scss'
 })
-export class BooksComponent implements OnInit{
+export class BooksComponent implements OnInit, OnDestroy{
   userType: string| null = null;
   constructor(
     private router: Router,
     private renderer: Renderer2,
+
   ) {
   }
   books: Book[]  = [
@@ -164,6 +165,11 @@ export class BooksComponent implements OnInit{
 }
 
   public onClick(id: string){
+    const bookToUpdate = this.books.find(book => book.bookId === "5d1d846e");
+    bookToUpdate!.availableCount = 4; // Example: Decrease available count by 1
+    bookToUpdate!.reservedCount = 1; // Example: Increase reserved count by 1
+    this.books[0] = bookToUpdate!;
+    console.log(this.books[0]);
     this.router.navigate([`workbench/books/edit/${id}`])
   }
 
@@ -186,5 +192,9 @@ export class BooksComponent implements OnInit{
 
   ngOnInit(): void {
     this.userType = sessionStorage.getItem("userType");
+  }
+
+  ngOnDestroy(): void {
+
   }
 }

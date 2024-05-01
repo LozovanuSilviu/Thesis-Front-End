@@ -6,6 +6,9 @@
     <app-search-component></app-search-component>
   </div>
 </div>
+<div class="logout-container">
+  <button class="logout-button" (click)="logOut()">Log out</button>
+</div>
 <div class="left-panel">
   <ul *ngIf="userType == 'librarian'">
       <li (click)="customHandleClick('books')">

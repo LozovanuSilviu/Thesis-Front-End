@@ -21,18 +21,12 @@ interface Car {
 })
 export class UserRentingsComponent {
   cars: Rent[] = [
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
-    { leaseId: "2", bookName: "5", leaseStartDate: "ieri", returnDate: "azi", customerName: "valera" },
+    {
+      "leaseId": "3dH5g9",
+      "bookName": "To Kill a Mockingbird",
+      "leaseStartDate": "2024-04-24",
+      "returnDate": "2024-05-01",
+      "customerName": "John"
+    },
   ];
 }
