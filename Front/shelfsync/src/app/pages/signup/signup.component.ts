@@ -28,7 +28,12 @@ interface SignupForm {
   styleUrl: './signup.component.scss'
 })
 export class SignUpComponent {
-  signupForm!: FormGroup<SignupForm>;
+  signupForm!: FormGroup<{
+    password: FormControl<string | null>;
+    name: FormControl<string | null>;
+    idnp: FormControl<string | null>;
+    email: FormControl<string | null>
+  }>;
 
   constructor(
     private router: Router,
@@ -36,17 +41,20 @@ export class SignUpComponent {
     private toastService: ToastrService
   ){
     this.signupForm = new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      name: new FormControl('', [Validators.required, Validators.minLength(6)]),
       email: new FormControl('', [Validators.required, Validators.email]),
+      idnp: new FormControl('', [Validators.required, Validators.minLength(12), Validators.maxLength(12)]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      passwordConfirm: new FormControl('', [Validators.required, Validators.minLength(6)]),
     })
   }
 
   submit(){
-    this.loginService.signup(this.signupForm.value.name, this.signupForm.value.email, this.signupForm.value.password).subscribe({
-      next: () => this.toastService.success("ok"),
-      error: () => this.toastService.error("not ok")
+    this.loginService.signup(this.signupForm.value.name!, this.signupForm.value.email!, this.signupForm.value.password!, this.signupForm.value.idnp!).subscribe({
+      next: () =>  {
+      this.toastService.success("Successfully created account")
+        this.router.navigate(["login"])
+      },
+      error: () => this.toastService.error("Something went wrong")
     })
   }
 

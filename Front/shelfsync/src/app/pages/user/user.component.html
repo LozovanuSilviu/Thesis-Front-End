@@ -1,17 +1,17 @@
 <h2>User Information</h2>
-<p>Full Name: {{ user.customerName }}</p>
+<p>Full Name: {{ user.userName }}</p>
 <p>Email: {{ user.email }}</p>
-<p>Number of Reservations: {{ user.numberOfReservations }}</p>
-<p>Number of Rentings: {{ user.numberOfRentings }}</p>
+<p>Number of Reservations: {{ numberReservation }}</p>
+<p>Number of Rentings: {{ numberRentings }}</p>
 
 <div *ngIf="userType == 'librarian'">
   <h3>Rentings</h3>
   <div class="table-spacing">
-    <p-table  [value]="rents" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5, 10]">
+    <p-table  [value]="(rentings | async)!" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5, 10]">
       <ng-template pTemplate="header">
         <tr>
           <th style="width: 15px;"></th>
-          <th [pSortableColumn]="'leaseId'">Renting Id <p-sortIcon field="vin"></p-sortIcon></th>
+<!--          <th [pSortableColumn]="'leaseId'">Renting Id <p-sortIcon field="vin"></p-sortIcon></th>-->
           <th [pSortableColumn]="'bookName'">Book <p-sortIcon field="year"></p-sortIcon></th>
           <th [pSortableColumn]="'leaseStartDate'">Start Date <p-sortIcon field="brand"></p-sortIcon></th>
           <th [pSortableColumn]="'returnDate'">Return Date <p-sortIcon field="color"></p-sortIcon></th>
@@ -26,7 +26,7 @@
               Return
             </p-button>
           </td>
-          <td>{{rent.leaseId}}</td>
+<!--          <td>{{rent.leaseId}}</td>-->
           <td>{{rent.bookName}}</td>
           <td>{{rent.leaseStartDate}}</td>
           <td>{{rent.returnDate}}</td>
@@ -37,11 +37,11 @@
   </div>
   <h3>Reservations</h3>
   <div class="table">
-    <p-table [value]="reservations" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5, 10]">
+    <p-table [value]="(reservations | async)!" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5, 10]">
       <ng-template pTemplate="header">
         <tr>
           <th style="width: 15px;"></th>
-          <th [pSortableColumn]="'reservationId'">Reservation Id <p-sortIcon field="vin"></p-sortIcon></th>
+<!--          <th [pSortableColumn]="'reservationId'">Reservation Id <p-sortIcon field="vin"></p-sortIcon></th>-->
           <th [pSortableColumn]="'bookName'">Book Name <p-sortIcon field="year"></p-sortIcon></th>
           <th [pSortableColumn]="'reservedUntil'">Reserved Until <p-sortIcon field="brand"></p-sortIcon></th>
           <th [pSortableColumn]="'customerName'">Customer Name <p-sortIcon field="color"></p-sortIcon></th>
@@ -55,7 +55,7 @@
               Rent
             </p-button>
           </td>
-          <td>{{reservation.reservationId}}</td>
+<!--          <td>{{reservation.reservationId}}</td>-->
           <td>{{reservation.bookName}}</td>
           <td>{{reservation.reservedUntil}}</td>
           <td>{{reservation.customerName}}</td>

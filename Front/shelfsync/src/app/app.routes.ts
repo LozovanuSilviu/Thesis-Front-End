@@ -17,6 +17,13 @@ import {AddReservationComponent} from "./pages/reservations/add-reservation/add-
 import {DeleteReservationComponent} from "./pages/reservations/cancel-reservation/delete-reservation.component";
 import {ReturnBookComponent} from "./pages/rentings/return-book/return-book.component";
 import {AddBookRentingComponent} from "./pages/rentings/add-book-renting/add-book-renting.component";
+import {SuccesRentComponent} from "./pages/rentings/succes-rent/succes-rent.component";
+import {
+  SuccesReservationRentComponent
+} from "./pages/reservations/succes-reservation-rent/succes-reservation-rent.component";
+import {SuccessReturnComponent} from "./pages/rentings/succes-return/success-return.component";
+import {SearchComponent} from "./pages/books/book-search/search.component";
+import {EmptyComponent} from "./pages/empty-page/empty.component";
 
 export const routes: Routes = [
     {
@@ -80,7 +87,7 @@ export const routes: Routes = [
           component: AllRentingsComponent,
         },
         {
-          path: "all-reservations/add-rent/:rentId",
+          path: "all-reservations/add-rent/:reservationId",
           component: AddReservationBasedRentComponent,
         },
         {
@@ -92,9 +99,31 @@ export const routes: Routes = [
           component: UserComponent,
         },
         {
+          path: "success-rent",
+          component: SuccesRentComponent
+        },
+        {
+          path: "success-rent-from-reservation",
+          component: SuccesReservationRentComponent
+        },
+        {
+          path: "success-return",
+          component: SuccessReturnComponent
+        },
+        {
+          path: "search/:criteria",
+          component: SearchComponent
+        },
+        {
           path: "",
           component: BooksComponent,
         },
+        {
+          path: "s",
+          component: EmptyComponent,
+        },
+
+
       ]
     },
    {

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Location, NgClass} from "@angular/common";
-import {Router} from "@angular/router";
+import {RentingsService} from "../../../services/rentings-service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-return-book',
@@ -11,20 +12,25 @@ import {Router} from "@angular/router";
   templateUrl: './return-book.component.html',
   styleUrl: './return-book.component.scss'
 })
-export class ReturnBookComponent {
+export class ReturnBookComponent implements OnInit, OnDestroy{
+  private customerId: string | null = null;
   constructor(
-    private location: Location
+    private location: Location,
+    private rentingService : RentingsService,
+    private route : ActivatedRoute,
+    private router : Router
   ) {
   }
-
-  bookName: string = 'book';
-  customerName: string = 'customer';
+  bookId : string | null = null
+  bookName: string | null = null;
+  customerName: string | null = null;
+  leaseId: string | null = null;
   stars: number[] = [1, 2, 3, 4, 5];
   currentRating: number = 0;
 
   onReturn() {
-    //call top return book
-    this.onCancel()
+    this.rentingService.returnBook(this.leaseId!, this.bookId!)
+    this.router.navigate(["workbench/success-return"])
   }
 
   onCancel() {
@@ -41,5 +47,20 @@ export class ReturnBookComponent {
 
   setCurrentRating(rating: number) {
     this.currentRating = rating;
+  }
+
+  ngOnDestroy(): void {
+    sessionStorage.removeItem("returnBookId")
+    sessionStorage.removeItem("bookName")
+    sessionStorage.removeItem("customerName")
+  }
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.leaseId = params['leaseId'];
+    });
+    this.bookId = sessionStorage.getItem("returnBookId");
+    this.bookName = sessionStorage.getItem("bookName")
+    this.customerName = sessionStorage.getItem("customerName")
   }
 }

@@ -38,7 +38,5 @@ export class EditBookComponent  implements OnInit{
       this.bookId = params['bookId'];
     });
       //request to get book details
-    this.editBook =
-      { bookId: "5d1d846e", bookName: "To Kill a Mockingbird", bookAuthor: "Harper Lee",library: "National Library of Moldova", availableCount: 3, reservedCount: 1 }
   }
 }

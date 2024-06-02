@@ -1,4 +1,6 @@
 export type LoginResponse = {
-    token: string,
-    name: string
+    userId: string,
+    userName: string,
+    userType: number,
+    libraryId: string
 }

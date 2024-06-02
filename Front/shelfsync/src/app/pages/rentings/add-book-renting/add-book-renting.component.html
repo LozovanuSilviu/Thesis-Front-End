@@ -2,20 +2,20 @@
   <div class="renting-details">
     <div class="details-row">
       <label>Book Name:</label>
-      <span>{{ bookDetails.bookName }}</span>
+      <span >{{ book.bookName }}</span>
     </div>
     <div class="details-row">
       <label>Book Author:</label>
-      <span>{{ bookDetails.bookAuthor }}</span>
+      <span>{{ book.bookAuthor }}</span>
     </div>
     <div class="details-row">
       <label>Customer Name:</label>
-      <input type="text" [(ngModel)]="bookDetails.customerName" name="customerName" class="input-field">
+      <input type="text" [(ngModel)]="rentDetails.customerName" name="customerName" class="input-field">
     </div>
     <div class="details-row">
       <label>Return Date:</label>
       <br>
-      <input type="date" [(ngModel)]="bookDetails.returnDate" name="returnDate" [min]="minDate" [max]="maxDate" class="input-field">
+      <input type="date" [(ngModel)]="rentDetails.returnDate" name="returnDate" [min]="minDate" [max]="maxDate" class="input-field">
     </div>
     <div class="button-container">
       <button class="submit-button" (click)="onSubmit()">Submit</button>

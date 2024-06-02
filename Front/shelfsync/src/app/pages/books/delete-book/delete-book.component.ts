@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import {BooksService} from "../../../services/books.service";
 
 @Component({
   selector: 'app-delete-book',
@@ -13,11 +14,12 @@ export class DeleteBookComponent implements OnInit{
   constructor(
     private router : Router,
     private route : ActivatedRoute,
+    private bookService: BooksService
   )
   {
   }
   confirm() {
-    //call to delete book
+    this.bookService.deleteBook(this.bookId!);
     this.router.navigate(["workbench/books"])
   }
 

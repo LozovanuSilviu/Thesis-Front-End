@@ -1,10 +1,10 @@
 <!-- table.component.html -->
 <h3>Users</h3>
 <div class="table">
-  <p-table [value]="users" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
+  <p-table [value]="(users | async)!" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
   <ng-template pTemplate="header">
     <tr>
-      <th [pSortableColumn]="'userId'">Customer Id <p-sortIcon field="vin"></p-sortIcon></th>
+      <th [pSortableColumn]="'customerId'">Customer Id <p-sortIcon field="vin"></p-sortIcon></th>
       <th [pSortableColumn]="'customerName'">Customer Name <p-sortIcon field="vin"></p-sortIcon></th>
       <th [pSortableColumn]="'email'">Email <p-sortIcon field="year"></p-sortIcon></th>
       <th [pSortableColumn]="'numberOfReservations'">Reservations number <p-sortIcon field="brand"></p-sortIcon></th>
@@ -13,7 +13,7 @@
   </ng-template>
   <ng-template pTemplate="body" let-user>
     <tr>
-      <td class="link" #headerCell (mouseenter)="onMouseEnter(headerCell)" (mouseleave)="onMouseLeave(headerCell)" (click)="onClick(user.userId)">{{user.userId}}</td>
+      <td class="link" #headerCell (mouseenter)="onMouseEnter(headerCell)" (mouseleave)="onMouseLeave(headerCell)" (click)="onClick(user.customerId)">{{user.customerId}}</td>
       <td>{{user.customerName}}</td>
       <td>{{user.email}}</td>
       <td>{{user.numberOfReservations}}</td>

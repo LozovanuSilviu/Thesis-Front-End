@@ -1,7 +1,7 @@
 export interface User{
   userId: string;
-  customerName: string;
+  userName: string;
   email: string;
-  numberOfReservations: number;
-  numberOfRentings: number;
 }
+
+

@@ -35,26 +35,23 @@ export class LoginComponent implements OnInit{
     private toastService: ToastrService
   ){
     this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)])
+      // email: new FormControl('', [Validators.required, Validators.email]),
+      email: new FormControl(''),
+      password: new FormControl('', [Validators.required, Validators.minLength(4)])
     })
   }
 
-    submit(){
-    // this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
-    //   next: () => this.toastService.success("Login feito com sucesso!"),
-    //   error: () => this.toastService.error("Erro inesperado! Tente novamente mais tarde")
-    // })
-    console.log("here")
-      if (this.loginForm.value.email == "john@gmail.com"){
-        this.router.navigate(["workbench"])
-        sessionStorage.setItem("userType", "user")
-        sessionStorage.setItem("userId", "1aB2cD")
-      }else {
-        this.router.navigate(["workbench"])
-        sessionStorage.setItem("userType", "librarian")
-      }
-  }
+       submit() {
+       this.loginService.login(this.loginForm.value.email, this.loginForm.value.password)
+         .subscribe({
+             next: () =>{
+               this.toastService.success("Successfully logged in");
+               this.router.navigate(["workbench"])
+             } ,
+             error: () => this.toastService.error("Something went wrong")
+           }
+         );
+    }
 
   navigate(){
     this.router.navigate(["signup"])

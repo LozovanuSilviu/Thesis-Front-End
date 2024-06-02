@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {Router} from "@angular/router";
+import {BooksService} from "../../../services/books.service";
+import {NewBook} from "../../../models/requestModels/newBook";
 
 @Component({
   selector: 'app-new-book',
@@ -13,15 +15,16 @@ import {Router} from "@angular/router";
   styleUrl: './new-book.component.scss'
 })
 export class NewBookComponent {
-  newBook: any = {
+  newBook: NewBook = {
     bookName: '',
     bookAuthor: '',
-    library: '',
+    library: sessionStorage.getItem("libraryId"),
     availableCount: 0
   };
 
   constructor(
-    private router : Router
+    private router : Router,
+    private bookService : BooksService
   )
   { }
 
@@ -33,8 +36,9 @@ export class NewBookComponent {
   onSubmit() {
     // Add logic to submit the form (e.g., send data to backend)
     console.log("Submitted:", this.newBook);
-    //call to api to add new book
+    this.bookService.addBook(this.newBook.bookName,this.newBook.bookAuthor,this.newBook.availableCount, this.newBook.library! )
     this.resetForm();
+    this.router.navigate(["workbench/books"])
   }
 
   resetForm() {

@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Book} from "../../../models/book";
+import {UserService} from "../../../services/user-service";
 
 @Component({
   selector: 'app-add-reservation',
@@ -9,16 +10,20 @@ import {Book} from "../../../models/book";
   templateUrl: './add-reservation.component.html',
   styleUrl: './add-reservation.component.scss'
 })
-export class AddReservationComponent implements OnInit{
-  book: Book| null = {bookId: "", bookName: "", bookAuthor: "", library: "", reservedCount: 0, availableCount: 0};
+export class AddReservationComponent implements OnInit, OnDestroy{
   bookId: string = "";
+  bookName: string | null = null;
+  bookAuthor: string | null = null;
+  libraryName: string | null = null;
+  username: string | null = null;
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) { }
 
   onSubmit() {
-    //submit book
+    this.userService.reserveBook(this.bookId, this.username!)
     this.onCancel();
   }
 
@@ -27,13 +32,25 @@ export class AddReservationComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    var bookName = sessionStorage.getItem("rbookName")
+    var bookAuthor = sessionStorage.getItem("rbookAuthor")
+    var bookLibrary = sessionStorage.getItem("rbookLibrary")
+    var userName = sessionStorage.getItem("username")
+
     this.route.params.subscribe(params => {
       this.bookId = params['bookId'];
     });
     //get book details
-    this.book!.bookId = this.bookId;
-    this.book!.bookName = "book name";
-    this.book!.bookAuthor = "author";
-    this.book!.library = "library";
+    this.bookName = bookName;
+    this.bookAuthor = bookAuthor;
+    this.libraryName = bookLibrary;
+    this.username = userName;
+
+  }
+
+  ngOnDestroy(): void {
+    sessionStorage.removeItem("rbookName")
+    sessionStorage.removeItem("rbookAuthor")
+    sessionStorage.removeItem("rbookLibrary")
   }
 }

@@ -1,11 +1,11 @@
 <!-- table.component.html -->
 <h3>Reservations</h3>
 <div class="table">
-  <p-table [value]="reservations" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
+  <p-table [value]="(reservations | async)!" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
     <ng-template pTemplate="header">
       <tr>
         <th style="width: 15px;"></th>
-        <th [pSortableColumn]="'reservationId'">Reservation Id <p-sortIcon field="vin"></p-sortIcon></th>
+<!--        <th [pSortableColumn]="'reservationId'">Reservation Id <p-sortIcon field="vin"></p-sortIcon></th>-->
         <th [pSortableColumn]="'bookName'">Book Name <p-sortIcon field="year"></p-sortIcon></th>
         <th [pSortableColumn]="'reservedUntil'">Reserved Until <p-sortIcon field="brand"></p-sortIcon></th>
         <th [pSortableColumn]="'customerName'">Customer Name <p-sortIcon field="color"></p-sortIcon></th>
@@ -18,7 +18,7 @@
             <i class="fa fa-cancel"></i>
           </p-button>
         </td>
-        <td>{{reservation.reservationId}}</td>
+<!--        <td>{{reservation.reservationId}}</td>-->
         <td>{{reservation.bookName}}</td>
         <td>{{reservation.reservedUntil}}</td>
         <td>{{reservation.customerName}}</td>

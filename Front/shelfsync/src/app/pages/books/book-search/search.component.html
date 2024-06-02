@@ -1,0 +1,33 @@
+<div>
+  <h3>Books</h3>
+</div>
+<div class="table">
+  <p-table [value]="(books$ | async)!" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]">
+    <ng-template pTemplate="header">
+      <tr>
+                <th style="width:50px;" ></th>
+          <th [pSortableColumn]="'bookName'">Book Name <p-sortIcon field="year"></p-sortIcon></th>
+        <th [pSortableColumn]="'bookAuthor'">Book Author <p-sortIcon field="brand"></p-sortIcon></th>
+        <th [pSortableColumn]="'libraryName'">Library <p-sortIcon field="color"></p-sortIcon></th>
+        <th [pSortableColumn]="'availableCount'">Available Count <p-sortIcon field="color"></p-sortIcon></th>
+        <th [pSortableColumn]="'reservedCount'">Reserved Count <p-sortIcon field="color"></p-sortIcon></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-book>
+      <tr>
+        <td>
+          <p-button class="edit-button" (click)="addReservation(book.bookId,book.bookName, book.bookAuthor, book.libraryName)" *ngIf="this.userType == 'user'">
+            <i class="fa fa-plus"></i>
+            Reserve
+          </p-button>
+        </td>
+
+        <td>{{book.bookName}}</td>
+        <td>{{book.bookAuthor}}</td>
+        <td>{{book.libraryName  }}</td>
+        <td>{{book.availableCount}}</td>
+        <td>{{book.reservedCount}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
